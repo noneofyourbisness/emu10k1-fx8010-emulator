@@ -1,0 +1,35 @@
+FX8010 Accuracy Core 1.20.0 validation
+======================================
+
+Clean CTest: 69/69 PASS
+
+New PCI/XTRAM state coverage
+----------------------------
+- XTRAM request age 0..2 samples is within the patented M-B=2 latency budget.
+- Age 2 is the explicit cache-latency limit; age >2 is exposed as controller risk.
+- A dropped cache's strictly-later round-robin opportunity is +16 samples.
+- No host-visible four-entry FIFO status register is invented.
+- Generic EMU10K1 PCI-error state is not misidentified as tank-cache underrun.
+
+New native spatializer signal coverage
+--------------------------------------
+- 2HeadphoneSpatializer: contralateral impulse begins at 12 samples; delayed energy present.
+- SB2SpeakerSpatializer: processed contralateral path begins at 8 samples.
+- SB4SpeakerSpatializer: processed source fans to four outputs with 8-sample opposite-side onset.
+- SurroundSpatializer: diffuse path has four-output recursive/filter tail.
+- Surround Encoder: principal path begins at 5 samples and is fully delayed.
+
+Measured primary-probe summary
+------------------------------
+headphone delayed-energy fraction: 35.06%
+headphone crossfeed onset: 12 samples = 0.250 ms @48k
+headphone alternate crossfeed tap observed: 31 samples = 0.646 ms @48k
+SB2/SB4 crossfeed onset: 8 samples = 0.167 ms @48k
+Surround Encoder principal onset: 5 samples = 0.104 ms @48k
+
+Interpretation
+--------------
+The native Creative spatializer programs are not no-ops. Their isolated-input
+responses implement delayed crossfeed, filtering/state and multi-output spatial
+distribution consistent with virtual-3D/binaural/crosstalk spatialization.
+Host-side positional control mapping remains separate research.

@@ -1,0 +1,36 @@
+Creative FX8010 Effects 3.4.3 / Accuracy Core 1.26.0
+Driver/VxD tank-cache pass validation
+Date: 2026-09-20
+
+IMPLEMENTED
+- HCFG LOCKTANKCACHE modeled as an external tank bus-master request barrier.
+- Outstanding XTRAM service requests are cancelled on the lock edge.
+- Cache selections while locked are suppressed and counted separately from FIFO-full drops.
+- TCB/TCBS mapping changes advance a mapping generation; newly admitted requests carry that generation.
+- TCBS code geometry: 8192 << code samples (code 0..7), corresponding to 16 KiB..2 MiB of 16-bit external tank storage.
+- Resident 18-sample cache payload is NOT assumed to be flushed/zeroed by HCFG lock.
+
+EVIDENCE BOUNDARY
+- Creative-derived EMU10K1 register headers describe HCFG LOCKTANKCACHE as cancelling bus-master accesses to tankcache.
+- Old Creative-origin Linux and ALSA FX8010 setup paths lock, clear TCB/TCBS, free/reallocate coherent DMA, program replacement TCB/TCBS, then unlock.
+- Early Live! passthrough code writes the coherent external tank while FX8010 reads it without per-block lock/flush, supporting ordinary moving-cache coherency rather than host invalidation.
+- January-2002 as10k1/emu-tools serializes TRAM read and write lines separately; lack of READ|WRITE examples in that corpus is therefore not evidence against hardware RSAW.
+- kX source documents a 'spy' utility for observing the original manufacturer driver with giveio.sys. The actual Creative EMU10K1.VXD binary was not disassembled in this pass.
+
+VALIDATION
+- Standalone FX8010 Core: 78 / 78 tests PASS.
+- Creative CLAP projects built: 11 / 11.
+- Effect-level regressions: 31 / 31 PASS.
+- Factory 512-sample smoke aggregate: 5722ce973120c049.
+- Factory 4096-sample dynamic aggregate: ff418092c64a7213.
+- Factory aggregates match Core 1.24/1.25 actual binaries; normal Creative effect audio path is unchanged.
+
+STILL UNRESOLVED
+- Signed-20 RSAW overflow law (wrap vs saturation).
+- Whether external XTRAM implements the internal-TRAM combined RSAW transaction.
+- One-free-FIFO-slot / two-active-cache winner.
+- Exact data returned/retained after an XTRAM missed-service deadline.
+- Real PCI completion/arbitration latency under contention.
+- Whether HCFG LOCKTANKCACHE invalidates resident on-chip cache payload or only cancels external bus-master work.
+- Direct low-level EMU10K1.VXD / EMUAPS.VXD traces of the above edge cases.
+- Exact NOISE0/NOISE1 silicon relationship; the 4097-delay model remains a compatibility hypothesis only.

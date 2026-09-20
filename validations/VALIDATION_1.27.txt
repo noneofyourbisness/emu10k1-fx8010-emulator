@@ -1,0 +1,40 @@
+Creative FX8010 Accuracy Core 1.27.0
+TRAM CLR / deep-unknowns pass validation
+Date: 2026-09-20
+
+Standalone core
+---------------
+79/79 CTest regressions PASS.
+New regression: tram_clear_controller.
+
+New source-backed behavior
+--------------------------
+Creative US 6,032,235 initialization controller promoted to an executable
+reference model:
+- READ CLR returns zero while global zeroedSamples < programmed delay length.
+- READ becomes valid exactly at equality.
+- internal RSAW CLR forces zero write while countdown is active.
+- microcode data-buffer writes are blocked for a clearing RSAW slot.
+- global zeroedSamples counter saturates rather than wrapping.
+
+Scope discipline
+----------------
+Recovered public RIFX records do not serialize the CLR/countdown metadata, so
+this controller is not silently enabled for ordinary factory RIFX playback.
+RSAW overflow law, external-XTRAM RSAW, XTRAM last-FIFO-slot pair priority,
+late-service payload behavior, exact PCI completion latency, LOCKTANKCACHE
+resident-cache contents, and exact NOISE silicon behavior remain explicitly
+unresolved.
+
+Factory corpus
+--------------
+41 programs, 1792 instructions, 236 TRAM declarations (140 read / 96 write),
+19 TRAM programs, 5 XTRAM programs.
+512-sample deterministic aggregate: 5722ce973120c049
+4096-sample dynamic aggregate:      ff418092c64a7213
+These match the actual Core 1.26 baseline.
+
+Modern Live! Experience bridge
+------------------------------
+LiveExperience_Modern_Bridge_0.1 builds against the same shared Core 1.27 and
+its liveexp_backend_smoke test passes.

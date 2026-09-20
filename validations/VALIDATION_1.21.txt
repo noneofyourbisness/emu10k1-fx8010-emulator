@@ -1,0 +1,26 @@
+FX8010 Accuracy Core 1.21.0 validation
+======================================
+Clean Release build: PASS
+CTest: 70/70 PASS
+
+New Core 1.21 coverage
+----------------------
+native_spatializer_host_feeds:
+- 2HeadphoneSpatializer: 3 directional L/R counterpart feed pairs, equal direct center feed, equal filtered/common feed.
+- SB2SpeakerSpatializer: exact direct L/R endpoints, 3 processed counterpart pairs, symmetric common/filter feed.
+- SB4SpeakerSpatializer: exact direct FL/FR/RL/RR factory feeds, 2 processed counterpart pairs, common four-output feed.
+- Keeps native A4 instruction/TRAM service asymmetry out of the host-feed identity test: feed counterparts are matched by swapped energy/dominance rather than pretending first-sample timing is symmetric.
+
+Retained coverage
+-----------------
+- all Core 1.20 PCI/XTRAM state tests;
+- native spatializer signal-response tests;
+- all 65,536 physical TRAM decompressor words;
+- all 1,048,576 signed-20 encoder inputs;
+- four-entry XTRAM FIFO diagnostics;
+- recovered APS/LiveWare factory corpus;
+- measured/patent-derived instruction, LOG/EXP, TRAM, NOISE topology and special-register tests.
+
+Signal-path status
+------------------
+Core 1.21 changes validation/evidence only. The DSP engine source is unchanged from Core 1.20. Exact AudioHQ pixel/coordinate -> FX-send interpolation remains host-side reconstruction territory.

@@ -1,0 +1,138 @@
+Internal ctest changing into directory: /mnt/data/tram_attack/FX8010_Accuracy_Core_1.18.0/build
+Test project /mnt/data/tram_attack/FX8010_Accuracy_Core_1.18.0/build
+      Start  1: ccr_layout
+ 1/66 Test  #1: ccr_layout .........................   Passed    0.00 sec
+      Start  2: accumulator_edges
+ 2/66 Test  #2: accumulator_edges ..................   Passed    0.09 sec
+      Start  3: macintw_wrap
+ 3/66 Test  #3: macintw_wrap .......................   Passed    0.00 sec
+      Start  4: macint_accu_lowword
+ 4/66 Test  #4: macint_accu_lowword ................   Passed    0.00 sec
+      Start  5: accum_guard_reuse
+ 5/66 Test  #5: accum_guard_reuse ..................   Passed    0.00 sec
+      Start  6: acc3_accum
+ 6/66 Test  #6: acc3_accum .........................   Passed    0.00 sec
+      Start  7: accum_result_pipeline
+ 7/66 Test  #7: accum_result_pipeline ..............   Passed    0.00 sec
+      Start  8: readonly_specials
+ 8/66 Test  #8: readonly_specials ..................   Passed    0.00 sec
+      Start  9: borrow_independent
+ 9/66 Test  #9: borrow_independent .................   Passed    0.00 sec
+      Start 10: skip_predicates
+10/66 Test #10: skip_predicates ....................   Passed    0.00 sec
+      Start 11: skip_hardware_semantics
+11/66 Test #11: skip_hardware_semantics ............   Passed    0.00 sec
+      Start 12: constant_map
+12/66 Test #12: constant_map .......................   Passed    0.00 sec
+      Start 13: tram_domains
+13/66 Test #13: tram_domains .......................   Passed    0.00 sec
+      Start 14: tram_fractional
+14/66 Test #14: tram_fractional ....................   Passed    0.00 sec
+      Start 15: tram_read_before_write
+15/66 Test #15: tram_read_before_write .............   Passed    0.00 sec
+      Start 16: tram_align_formula
+16/66 Test #16: tram_align_formula .................   Passed    0.00 sec
+      Start 17: tram_log_relation
+17/66 Test #17: tram_log_relation ..................   Passed    0.01 sec
+      Start 18: tram_raw_spdif_codebook
+18/66 Test #18: tram_raw_spdif_codebook ............   Passed    0.01 sec
+      Start 19: tram_decompressor_patent
+19/66 Test #19: tram_decompressor_patent ...........   Passed    0.01 sec
+      Start 20: xtram_cache_geometry
+20/66 Test #20: xtram_cache_geometry ...............   Passed    0.00 sec
+      Start 21: xtram_fifo_controller
+21/66 Test #21: xtram_fifo_controller ..............   Passed    0.00 sec
+      Start 22: tram_address_view
+22/66 Test #22: tram_address_view ..................   Passed    0.00 sec
+      Start 23: irq_register
+23/66 Test #23: irq_register .......................   Passed    0.00 sec
+      Start 24: saturation_debug
+24/66 Test #24: saturation_debug ...................   Passed    0.00 sec
+      Start 25: rifx_resources
+25/66 Test #25: rifx_resources .....................   Passed    0.00 sec
+      Start 26: logexp_roundtrip
+26/66 Test #26: logexp_roundtrip ...................   Passed    0.00 sec
+      Start 27: log_reference_vectors
+27/66 Test #27: log_reference_vectors ..............   Passed    0.00 sec
+      Start 28: noise_sources
+28/66 Test #28: noise_sources ......................   Passed    0.00 sec
+      Start 29: dbac_cadence
+29/66 Test #29: dbac_cadence .......................   Passed    0.00 sec
+      Start 30: ccr_result_matrix
+30/66 Test #30: ccr_result_matrix ..................   Passed    0.00 sec
+      Start 31: macmv_accumulator
+31/66 Test #31: macmv_accumulator ..................   Passed    0.00 sec
+      Start 32: accu_xy_zero
+32/66 Test #32: accu_xy_zero .......................   Passed    0.00 sec
+      Start 33: logexp_michgz_vectors
+33/66 Test #33: logexp_michgz_vectors ..............   Passed    0.00 sec
+      Start 34: skip_michgz_vectors
+34/66 Test #34: skip_michgz_vectors ................   Passed    0.00 sec
+      Start 35: tstneg_michgz_ccr
+35/66 Test #35: tstneg_michgz_ccr ..................   Passed    0.00 sec
+      Start 36: instruction_words
+36/66 Test #36: instruction_words ..................   Passed    0.00 sec
+      Start 37: card_default_routing
+37/66 Test #37: card_default_routing ...............   Passed    0.00 sec
+      Start 38: mac23_michgz_vectors
+38/66 Test #38: mac23_michgz_vectors ...............   Passed    0.01 sec
+      Start 39: michgz_remaining_opcode_sweep
+39/66 Test #39: michgz_remaining_opcode_sweep ......   Passed    1.27 sec
+      Start 40: tram_hardware_control
+40/66 Test #40: tram_hardware_control ..............   Passed    0.00 sec
+      Start 41: card_pcm_scaling
+41/66 Test #41: card_pcm_scaling ...................   Passed    0.00 sec
+      Start 42: pt_playback_controlflow
+42/66 Test #42: pt_playback_controlflow ............   Passed    0.00 sec
+      Start 43: debug_register_card
+43/66 Test #43: debug_register_card ................   Passed    0.00 sec
+      Start 44: recovered_suite_audit
+44/66 Test #44: recovered_suite_audit ..............   Passed    0.00 sec
+      Start 45: tram_log7_vectors
+45/66 Test #45: tram_log7_vectors ..................   Passed    0.00 sec
+      Start 46: tram_linear_compat
+46/66 Test #46: tram_linear_compat .................   Passed    0.00 sec
+      Start 47: native_record_dither
+47/66 Test #47: native_record_dither ...............   Passed    0.00 sec
+      Start 48: native_peak_meter
+48/66 Test #48: native_peak_meter ..................   Passed    0.00 sec
+      Start 49: native_ac3pass
+49/66 Test #49: native_ac3pass .....................   Passed    0.00 sec
+      Start 50: native_sblfx_suite_audit
+50/66 Test #50: native_sblfx_suite_audit ...........   Passed    0.00 sec
+      Start 51: native_sblfx_smoke
+51/66 Test #51: native_sblfx_smoke .................   Passed    0.00 sec
+      Start 52: native_tram_delay_geometry
+52/66 Test #52: native_tram_delay_geometry .........   Passed    0.00 sec
+      Start 53: native_spatializer_tram_schedule
+53/66 Test #53: native_spatializer_tram_schedule ...   Passed    0.00 sec
+      Start 54: noise_cadence_evidence
+54/66 Test #54: noise_cadence_evidence .............   Passed    0.00 sec
+      Start 55: native_tram_address_phase
+55/66 Test #55: native_tram_address_phase ..........   Passed    0.00 sec
+      Start 56: native_dynamic_tram_pipeline
+56/66 Test #56: native_dynamic_tram_pipeline .......   Passed    0.00 sec
+      Start 57: tram_patent_modes
+57/66 Test #57: tram_patent_modes ..................   Passed    0.00 sec
+      Start 58: tram_patent_align
+58/66 Test #58: tram_patent_align ..................   Passed    0.00 sec
+      Start 59: tram_clear_patent
+59/66 Test #59: tram_clear_patent ..................   Passed    0.00 sec
+      Start 60: tram_off_buffer_gpr
+60/66 Test #60: tram_off_buffer_gpr ................   Passed    0.00 sec
+      Start 61: skip_patent_conflict
+61/66 Test #61: skip_patent_conflict ...............   Passed    0.00 sec
+      Start 62: logexp_patent_edges
+62/66 Test #62: logexp_patent_edges ................   Passed    0.00 sec
+      Start 63: full_factory_corpus_audit
+63/66 Test #63: full_factory_corpus_audit ..........   Passed    0.00 sec
+      Start 64: full_factory_corpus_smoke
+64/66 Test #64: full_factory_corpus_smoke ..........   Passed    0.02 sec
+      Start 65: noise_delay_4097
+65/66 Test #65: noise_delay_4097 ...................   Passed    0.00 sec
+      Start 66: full_factory_corpus_dynamic
+66/66 Test #66: full_factory_corpus_dynamic ........   Passed    0.14 sec
+
+100% tests passed, 0 tests failed out of 66
+
+Total Test time (real) =   1.67 sec

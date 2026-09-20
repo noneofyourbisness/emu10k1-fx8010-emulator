@@ -1,0 +1,32 @@
+FX8010 Accuracy Core 1.19.0 validation
+=====================================
+
+Clean Release build: PASS
+CTest: 67/67 PASS
+
+New Core 1.19 coverage
+----------------------
+xtram_fifo_ambiguity:
+- locks Creative US 6,275,899 geometry constants: B=16 transfer samples, M=18 cache samples, 16-sample service period, four FIFO entries;
+- exposes the stated M-B=2 sample-period latency slack;
+- from an empty FIFO with all caches active and no completions: sample pair 0 fills entries 0-1, pair 1 fills entries 2-3, pair 2 is the first forced to drop;
+- proves a dropped cache pair is selected again after 16 samples, with no distinct source-backed 64-sample retry mechanism;
+- exposes the one-free-entry/two-active-cache identity ambiguity rather than silently choosing a hardware winner;
+- verifies both research tie-breaks produce the same source-determined admission counts;
+- prompt-service stress: 1024/1024 requests accepted+completed, zero drops across 512 samples with all 32 caches active.
+
+Retained coverage
+-----------------
+- all 65,536 physical TRAM decompressor words against Creative's sign-aware EXP reconstruction;
+- all 1,048,576 signed-20 encoder inputs against the LOG7 / negative-0x7000 raw-word law;
+- recovered E-mu APS 1.5 + Creative LiveWare factory corpus;
+- 67-bit accumulator, real-card opcode/SKIP/LOG/TSTNEG/MAC vectors, TRAM ALIGN/CLEAR/RSAW diagnostics, NOISE0->NOISE1 4097-sample topology.
+
+Interpretation boundary
+-----------------------
+The FIFO/controller model remains a diagnostic/fault-research layer. It is not inserted into normal effect audio processing because exact PCI completion timing is not established. In particular, no synthetic 64-sample XTRAM glitch is injected.
+
+Engineering confidence estimate
+-------------------------------
+Arbitrary sample-level original EMU10K1 FX8010 behavior: ~99.1-99.3%.
+XTRAM controller semantics are more tightly bounded; exact bus arbitration and one-free/two-active silicon priority remain unresolved.

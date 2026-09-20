@@ -1,0 +1,13 @@
+FX8010 Accuracy Core 1.23.0 validation
+======================================
+
+Clean Release CTest: 73/73 PASS
+
+New 1.23 coverage
+-----------------
+- liveware_balance_law: exact CTSURMIX GetBalance integer ratio law; DEVCON Balance/Fade unconfigured sentinel and shipped .sea sample values.
+- native_surround_feed_taxonomy: all 11 SurroundSpatializer native feeds and all 4 Surround Encoder feeds classified by isolated impulse response.
+
+DSP arithmetic / TRAM signal path
+---------------------------------
+Unchanged from Core 1.22. The new work tightens host/spatial evidence rather than inventing a new silicon behavior.

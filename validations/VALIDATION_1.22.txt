@@ -1,0 +1,13 @@
+FX8010 Accuracy Core 1.22.0 validation
+======================================
+Release build: PASS
+CTest: 71/71 PASS
+
+New PCI1024 coverage:
+- supplied Win95/NT4 SBLFX.DLL copies are identical; SHA-256 e64aaec380fcd04fe00ec1e69568ba895747b25e01ccd3dfe2d7ae2951f19d5f
+- 23/23 embedded LiveWare 2.5 RIFX programs byte-match native_sblfx_1999 fixtures
+- exact fixture fingerprints locked by pci1024_liveware_revision test
+- PCI1024 vs later factory spatializer/reverb revision families kept distinct
+- DEVCON/SURMIX host placement/send architecture documented without inventing the remaining 9-weight formula
+
+DSP arithmetic and normal audible TRAM behavior are unchanged from Core 1.21.
