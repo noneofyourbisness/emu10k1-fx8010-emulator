@@ -1,6 +1,6 @@
 # **EMU10K1 FX8010 Emulator**
 
-An experimental software implementation of the FX8010 DSP found in Creative Labs / E-mu EMU10K1 audio processors, most famously used by the Sound Blaster Live! family.
+An experimental software implementation of the FX8010 DSP found in Creative Labs / E-mu EMU10K1 audio processors, most famously used by the Sound Blaster Live! family of sound cards.
 
 The goal of this project is to reproduce the behavior of the original programmable effects processor closely enough to execute authentic Creative DSP microcode and recreate classic Sound Blaster Live! effects on modern systems.
 
@@ -13,6 +13,26 @@ The FX8010 portion is substantially implemented and capable of executing recover
 This is not currently a complete EMU10K1 hardware emulator. In particular, the EMU10K1 wavetable/SoundFont voice engine, PCI device interface, DMA engine, AC'97 interface, and other surrounding hardware are outside the current implementation or remain works in progress.
 
 No claim of cycle-perfect or bit-perfect emulation is currently made.
+
+# **Notice - AI-assisted development**
+
+Development and reverse-engineering work on this project has been substantially assisted by OpenAI GPT models.
+
+AI assistance has been used for tasks including:
+
+Analysis of historical source code and drivers
+
+Reverse engineering
+
+Comparing independent implementations
+
+DSP arithmetic analysis
+
+Code generation and refactoring
+
+Test generation
+
+Regression analysis
 
 # **Currently implemented**
 
@@ -101,26 +121,6 @@ The FX8010 was an unusually powerful programmable audio DSP for consumer hardwar
 Much of its behavior was either sparsely documented, undocumented, or hidden behind Creative's proprietary drivers and tools.
 
 This project attempts to preserve and reproduce that hardware behavior using surviving documentation, open-source drivers, SDK material, historical software, recovered DSP programs, reverse engineering, and automated testing.
-
-# **Notice - AI-assisted development**
-
-Development and reverse-engineering work on this project has been substantially assisted by OpenAI GPT models.
-
-AI assistance has been used for tasks including:
-
-Analysis of historical source code and drivers
-
-Reverse engineering
-
-Comparing independent implementations
-
-DSP arithmetic analysis
-
-Code generation and refactoring
-
-Test generation
-
-Regression analysis
 
 # **Documentation**
 
